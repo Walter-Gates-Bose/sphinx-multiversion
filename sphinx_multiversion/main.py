@@ -81,7 +81,7 @@ def load_sphinx_config(confpath, confoverrides):
     q = multiprocessing.Queue()
     proc = multiprocessing.Process(
         target=load_sphinx_config_worker,
-        args=(q, confpath, confoverrides, add_defaults),
+        args=(q, confpath, confoverrides),
     )
     proc.start()
     proc.join()
